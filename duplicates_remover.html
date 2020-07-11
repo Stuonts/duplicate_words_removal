@@ -1,0 +1,21 @@
+<html>
+<body>
+<textarea name="textarea" id="intext" style="width:450px;height:250px;">sss,bbb,sss,1fg,ss,gsr</textarea><br/>
+<textarea name="textarea" id="outtext" style="width:450px;height:250px;"></textarea><br/>
+<button onclick="process()">Process</button>
+
+<script>
+function process()
+{
+	var txt = document.getElementById("intext").value;
+	txt = txt.replace(/[\s]*,[\s]*/g,',');
+	var txtSplit = txt.split(",");
+	var uniq = [ ...new Set(txtSplit) ];
+	document.getElementById("outtext").value = uniq;
+}
+</script>
+
+</body>
+
+
+</html>
